@@ -30,7 +30,7 @@ const App = () => {
   const[expenses ,setExpenses] = useState(DUMMY_Expense);
 
   function FetachData(){
-    fetch('http://localhost:8000/post').then(
+    fetch('https://expensedilip.herokuapp.com/post').then(
       response =>{
         return response.json();
       }
@@ -49,7 +49,7 @@ const App = () => {
   }, []);
  
   const addExpenseHandler = (expense) => {
-      fetch('http://localhost:8000/post' ,{
+      fetch('https://expensedilip.herokuapp.com/post' ,{
         method : 'POST',
         body : JSON.stringify(expense),
         headers :{
